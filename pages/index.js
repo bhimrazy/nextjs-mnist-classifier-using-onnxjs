@@ -143,12 +143,8 @@ export default function Home() {
           </div>
           <div className="sm:flex sm:mt-16">
             <div className="sm:w-1/2 sm:pl-16 mt-8 sm:mt-0 pr-4">
-              <a title="MNIST CLASSIFIER" href="/">
-                <img
-                  alt="MNIST CLASSIFIER"
-                  src="https://tailwindcomponents.com/svg/logo-white.svg"
-                  className="h-8"
-                />
+              <a className="text-xl text-white font-semibold" title="MNIST CLASSIFIER" href="/">
+              MNIST CLASSIFIER
               </a>{" "}
               <p className="text-teal-100 mt-2">
                 A repository for community components using Tailwind CSS

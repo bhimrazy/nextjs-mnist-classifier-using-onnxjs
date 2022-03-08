@@ -141,9 +141,9 @@ export function Canvas() {
       <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-1/2">
         {output.length == 0 && (
           <div className="animate-pulse space-y-2">
-            {Array.from(new Array(10)).map(() => {
+            {Array.from(new Array(10)).map((val,i) => {
               return (
-                <div className="flex space-x-4 justify-center items-center ">
+                <div key={i} className="flex space-x-4 justify-center items-center ">
                   <div className="rounded-full bg-blue-400 h-6 w-6"></div>
                   <div className="flex-1 space-y-4 py-1">
                     <div className="h-4 bg-blue-400 rounded"></div>
@@ -158,7 +158,7 @@ export function Canvas() {
             {Array.from(output).map((val, index) => {
               const width = (val * 100).toFixed(2);
               return (
-                <div className="flex space-x-4 justify-center items-center ">
+                <div key={index} className="flex space-x-4 justify-center items-center ">
                   <div className="flex flex-row rounded-full bg-blue-400 h-6 w-6 justify-center items-center">
                     <p className="text-white font-bold">{index}</p>
                   </div>
