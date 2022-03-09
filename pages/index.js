@@ -7,8 +7,9 @@ export default function Home() {
       <Head>
         <title>MNIST CLASSIFIER | ONNXJS | PYTORCH | Bhimraj Yadav</title>
         <link rel="icon" href="/favicon.ico" />
+       
       </Head>
-      <header className="top-0 sticky left-0 w-full z-40 bg-white border-b border-gray-100">
+      <header className="top-0 sticky left-0 w-full z-40 py-2 bg-gray-50 border-b border-gray-100">
         <div className="container mx-auto px-20 flex items-center justify-between h-16">
           <a title="mnist classifier" href="/">
             <div className="flex items-center space-x-2">
@@ -28,8 +29,8 @@ export default function Home() {
                 />
               </svg>
               <span className="text-2xl font-normal text-gray-600 ">
-                mnist
-                <span className="font-bold p-1 text-black">classifier</span>
+                <span>MNIST DIGIT CLASSIFIER </span>
+                <span className="font-bold p-1 text-black">ONNXJS</span>
               </span>
             </div>
           </a>
@@ -65,225 +66,41 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className="flex flex-col flex-grow overflow-hidden min-h-screen">
-        <div className="container mx-auto px-24">
-          <div className="bg-blue-100 mt-6 rounded-lg py-6 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-12 flex flex-col items-center">
-            {/* <div className="sm:w-1/2">
-              <h1 className="text-center sm:text-left text-2xl sm:text-3xl text-secondary mb-2 leading-snug">
-                A <strong className="underline">free repository</strong> for
-                community components using{" "}
-                <a
-                  href="https://tailwindcss.com"
-                  target="_blank"
-                  className="font-bold hover:underline"
-                >
-                  TailwindCSS
-                </a>
-              </h1>{" "}
-              <p className="text-center sm:text-left text-gray-700 sm:text-lg mb-6 lg:pr-12">
-                Open source Tailwind UI components and templates to bootstrap
-                your new apps, projects or landing sites!
-              </p>{" "}
-              <div className="h-16 sm:pr-12">
-                <form action="/search" className="relative">
-                  <input
-                    type="search"
-                    name="query"
-                    placeholder="Search components"
-                    required="required"
-                    className="p-4 text-gray-700 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-400 focus:ring-0"
-                  />{" "}
-                  <button
-                    type="submit"
-                    className="bg-teal-300 text-white rounded font-lg absolute top-0 right-0 bottom-0 mt-1 mr-1 mb-1 px-8 font-semibold hover:bg-teal-300 focus:outline-none focus:ring"
-                  >
-                    Search
-                  </button>
-                </form>
-              </div>
-            </div> */}
-            <div className="justify-center items-center p-5">
-              <Canvas />
-            </div>
-          </div>
+      <main className="flex flex-col bg-gray-200 py-20">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow flex ">
+          <Canvas />
         </div>
       </main>
 
-      <footer className="flex flex-col items-center justify-center w-full border-t bg-secondary">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center lg:w-1/2 xl:w-1/3 mx-auto pt-8 ">
-            <span className="text-2xl font-bold text-white mb-1">
-              Subscribe
-            </span>
-            <p className="text-teal-100 text-center">
-              Receive the latest free components and templates
-            </p>
-            <form
-              action="/newsletters/subscribe"
-              method="post"
-              className="flex sm:block mt-6 bg-white p-1 rounded"
-            >
-              <input
-                type="hidden"
-                name="_token"
-                value="9loqmZUEplTcJEaSFfX1C0WgWXOIKkkNJMjBcUQW"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email address"
-                className="py-3 px-3 border-none text-gray-700 w-48 sm:w-64 focus:ring-0 focus:outline-none"
-              />
-              <input
-                type="submit"
-                value="Subscribe"
-                className="bg-teal-300 rounded text-white py-3 px-6 cursor-pointer"
-              />
-            </form>
-          </div>
-          <div className="sm:flex sm:mt-16">
-            <div className="sm:w-1/2 sm:pl-16 mt-8 sm:mt-0 pr-4">
-              <a className="text-xl text-white font-semibold" title="MNIST CLASSIFIER" href="/">
-              MNIST CLASSIFIER
-              </a>{" "}
-              <p className="text-teal-100 mt-2">
-                A repository for community components using Tailwind CSS
-              </p>{" "}
-              <div className="flex mt-6">
-                <a
-                  rel="nofollow"
-                  title="MNIST CLASSIFIER"
-                  href="/"
-                  className="mr-3 flex items-center"
-                >
-                  <img
-                    alt="MNIST CLASSIFIER"
-                    src="https://tailwindcomponents.com/svg/twitter.svg"
-                    className="w-8 h-8 mr-2"
-                  />{" "}
-                  <span className="text-white hover:underline">
-                    Follow us on Twitter
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div className="mt-16 sm:mt-0 sm:w-1/2 sm:pr-16 flex flex-row">
-              <div className="flex flex-col w-2/3 sm:w-1/2 mr-4">
-                <span className="font-bold text-white uppercase mb-2">
-                  Components
-                </span>{" "}
-                <ul className="flex-1">
-                  <li className="mb-1">
-                    <a
-                      title="Tailwind CSS Dropdowns"
-                      href="/components/dropdowns"
-                      className="text-teal-100 hover:text-white"
-                    >
-                      Tailwind Dropdowns
-                    </a>
-                  </li>{" "}
-                  <li className="mb-1">
-                    <a
-                      title="Tailwind CSS Logins"
-                      href="/components/logins"
-                      className="text-teal-100 hover:text-white"
-                    >
-                      Tailwind Logins
-                    </a>
-                  </li>{" "}
-                  <li className="mb-1">
-                    <a
-                      title="Tailwind CSS Modals"
-                      href="/components/modals"
-                      className="text-teal-100 hover:text-white"
-                    >
-                      Tailwind Modals
-                    </a>
-                  </li>{" "}
-                  <li className="mb-1">
-                    <a
-                      title="Tailwind CSS Tabs"
-                      href="/components/tabs"
-                      className="text-teal-100 hover:text-white"
-                    >
-                      Tailwind Tabs
-                    </a>
-                  </li>{" "}
-                  <li className="mb-1">
-                    <a
-                      title="Tailwind CSS Inputs"
-                      href="/components/inputs"
-                      className="text-teal-100 hover:text-white"
-                    >
-                      Tailwind Inputs
-                    </a>
-                  </li>{" "}
-                  <li className="mb-1">
-                    <a
-                      title="Tailwind CSS Selects"
-                      href="/components/selects"
-                      className="text-teal-100 hover:text-white"
-                    >
-                      Tailwind Selects
-                    </a>
-                  </li>
-                </ul>
-              </div>{" "}
-              <div className="flex flex-col">
-                <span className="font-bold text-white uppercase mb-2">
-                  Utilities
-                </span>{" "}
-                <div className="flex">
-                  <ul className="flex-1">
-                    <li className="mb-1">
-                      <a
-                        title="Tailwind Cheatsheet"
-                        href="/cheatsheet/"
-                        className="text-teal-100 hover:text-white"
-                      >
-                        Cheatsheet
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container mx-auto px-6">
-          <div className="mt-16 border-t border-teal-800 flex flex-col items-center">
-            <div className="sm:w-2/3 text-center py-6">
-              <p className="text-sm text-teal-100">
-                © 2021 by Bhimraj Yadav •{" "}
-                <a title="MNIST CLASSIFIER" rel="nofollow" href="/">
-                  Privacy
-                </a>{" "}
-                •{" "}
-                <a title="MNIST CLASSIFIER" rel="nofollow" href="/">
-                  Terms and Conditions
-                </a>{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="container mx-auto px-6 mb-4">
-          <a
-            className="flex items-center justify-center text-white"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{"   "}
+      <footer className="flex bg-gray-200 flex-col space-y-2 items-center justify-center w-full h-24 border-t print:hidden">
+        <a
+          className="flex items-center justify-center"
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{" "}
+          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
+        </a>
+        <div className="items-center flex flex-shrink-0 justify-center">
+          <span>Made with </span>
+          <span className="text-pink-600 px-1">
             <svg
-              className="h-4 w-auto"
-              role="img"
-              aria-label="Vercel Inc."
-              viewBox="0 0 283 64"
-              fill="white"
+              className="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M37 0l37 64H0L37 0zM159.6 34c0-10.3-7.6-17.5-18.5-17.5s-18.5 7.2-18.5 17.5c0 10.1 8.2 17.5 19.5 17.5 6.2 0 11.8-2.3 15.4-6.5l-6.8-3.9c-2.1 2.1-5.2 3.4-8.6 3.4-5 0-9.3-2.7-10.8-6.8l-.3-.7h28.3c.2-1 .3-2 .3-3zm-28.7-3l.2-.6c1.3-4.3 5.1-6.9 9.9-6.9 4.9 0 8.6 2.6 9.9 6.9l.2.6h-20.2zM267.3 34c0-10.3-7.6-17.5-18.5-17.5s-18.5 7.2-18.5 17.5c0 10.1 8.2 17.5 19.5 17.5 6.2 0 11.8-2.3 15.4-6.5l-6.8-3.9c-2.1 2.1-5.2 3.4-8.6 3.4-5 0-9.3-2.7-10.8-6.8l-.3-.7H267c.2-1 .3-2 .3-3zm-28.7-3l.2-.6c1.3-4.3 5.1-6.9 9.9-6.9 4.9 0 8.6 2.6 9.9 6.9l.2.6h-20.2zM219.3 28.3l6.8-3.9c-3.2-5-8.9-7.8-15.8-7.8-10.9 0-18.5 7.2-18.5 17.5s7.6 17.5 18.5 17.5c6.9 0 12.6-2.8 15.8-7.8l-6.8-3.9c-1.8 3-5 4.7-9 4.7-6.3 0-10.5-4.2-10.5-10.5s4.2-10.5 10.5-10.5c3.9 0 7.2 1.7 9 4.7zM282.3 5.6h-8v45h8v-45zM128.5 5.6h-9.2L101.7 36 84.1 5.6h-9.3L101.7 52l26.8-46.4zM185.1 25.8c.9 0 1.8.1 2.7.3v-8.5c-6.8.2-13.2 4-13.2 8.7v-8.7h-8v33h8V36.3c0-6.2 4.3-10.5 10.5-10.5z"></path>
+              <path
+                fillRule="evenodd"
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                clipRule="evenodd"
+              ></path>
             </svg>
-          </a>
+          </span>
+          <span className="font-medium text-blue-600 hover:text-blue-700">
+            By Bhimraj Yadav
+          </span>
         </div>
       </footer>
     </div>

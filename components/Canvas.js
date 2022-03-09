@@ -123,30 +123,30 @@ export function Canvas() {
   const cursor = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000000" opacity="0.8" height="${width}" viewBox="0 0 ${width} ${width}" width="${width}"><circle cx="${widthHalf}" cy="${widthHalf}" r="${widthHalf}" fill="%23000000" /></svg>') ${widthHalf} ${widthHalf}, auto`;
   const { output, inferenceTime, maxValue } = results;
   return (
-    <div className="flex flex-col md:flex-row md:space-x-4 h-screen w-screen justify-center items-center">
+    <div className="flex flex-col md:flex-row md:space-x-8 min-h-[60vh] w-screen justify-center items-center">
       <div className="flex flex-col space-y-3">
-        <p className="uppercase font-bold text-purple-600"> Draw Here !</p>
+        <p className="uppercase font-bold text-gray-800"> Draw Here !</p>
         <canvas
-          className="border-2 border-blue-400 shadow-md rounded"
+          className="border-2 border-indigo-400 shadow-md rounded"
           ref={canvas}
           style={{ cursor }}
         />
-        <button
-          className="bg-teal-400  hover:bg-teal-500 transition-all rounded-sm shadow focus:outline-none p-2 text-teal-100 font-medium m-4 focus:ring-1 focus:ring-offset-teal-800"
+        <div> <button
+          className="bg-gray-800 w-full py-2  hover:bg-gray-700 text-white transition-all rounded-md shadow focus:outline-none"
           onClick={handleClear}
         >
           Clear Canvas
-        </button>
+        </button></div>
       </div>
-      <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-1/2">
+      <div className="border shadow rounded-md px-6 py-4 max-w-sm w-1/2">
         {output.length == 0 && (
           <div className="animate-pulse space-y-2">
-            {Array.from(new Array(10)).map((val,i) => {
+            {Array.from(new Array(10)).map((val, i) => {
               return (
                 <div key={i} className="flex space-x-4 justify-center items-center ">
-                  <div className="rounded-full bg-blue-400 h-6 w-6"></div>
+                  <div className="rounded-full bg-indigo-400 h-6 w-6"></div>
                   <div className="flex-1 space-y-4 py-1">
-                    <div className="h-4 bg-blue-400 rounded"></div>
+                    <div className="h-4 bg-indigo-400 rounded"></div>
                   </div>
                 </div>
               );
@@ -154,25 +154,24 @@ export function Canvas() {
           </div>
         )}
         {output && (
-          <div className=" space-y-2">
+          <div className="space-y-2">
             {Array.from(output).map((val, index) => {
               const width = (val * 100).toFixed(2);
               return (
                 <div key={index} className="flex space-x-4 justify-center items-center ">
-                  <div className="flex flex-row rounded-full bg-blue-400 h-6 w-6 justify-center items-center">
+                  <div className="flex flex-row rounded-full bg-indigo-700 hover:bg-indigo-800 cursor-pointer h-6 w-6 justify-center items-center">
                     <p className="text-white font-bold">{index}</p>
                   </div>
                   <div className="flex-1 space-y-4 py-1">
-                    <div className="flex h-5 bg-blue-300 rounded justify-start items-center">
+                    <div className="flex h-5 bg-indigo-400/80 rounded justify-start items-center">
                       <div
-                        className={`${
-                          val == maxValue ? "bg-blue-800" : "bg-blue-300"
-                        } rounded h-5 justify-center items-center `}
+                        className={`${val == maxValue ? "bg-indigo-800" : "bg-indigo-500/80"
+                          } rounded h-5 justify-center items-center `}
                         style={{
                           width: width + "%",
                         }}
                       >
-                        <p className="px-2 text-xs text-white"> {width}%</p>
+                        <p className="px-3 pt-[2px] text-xs text-white"> {width}%</p>
                       </div>
                     </div>
                   </div>

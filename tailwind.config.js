@@ -1,24 +1,22 @@
-const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    fontFamily: {
-      display: ["Inter", "system-ui", "sans-serif"],
-      body: ["Inter", "system-ui", "sans-serif"],
-    },
     extend: {
-      colors: {
-        teal: colors.teal,
-        blueGray: colors.blueGray,
-        secondary: "#0b2239",
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        poppins: ["Poppins", "system-ui", "sans-serif"],
+        mono: ["Menlo", ...defaultTheme.fontFamily.mono],
+        source: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
+        "ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
+        system: defaultTheme.fontFamily.sans,
+        flow: "Flow",
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-};
+  plugins: []
+
+}
