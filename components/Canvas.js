@@ -84,6 +84,12 @@ export function Canvas() {
       return;
     }
     ctx.current.clearRect(0, 0, canvas.current.width, canvas.current.height);
+    const pred = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    setResults({
+      output: pred,
+      sessionRunning: false,
+      inferenceTime,
+    });
   }, []);
   const drawNormal = useCallback(
     (e) => {
@@ -121,7 +127,8 @@ export function Canvas() {
   const width = currentWidth;
   const widthHalf = width ? width / 2 : 0;
   const cursor = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000000" opacity="0.8" height="${width}" viewBox="0 0 ${width} ${width}" width="${width}"><circle cx="${widthHalf}" cy="${widthHalf}" r="${widthHalf}" fill="%23000000" /></svg>') ${widthHalf} ${widthHalf}, auto`;
-  const { output, inferenceTime, maxValue } = results;
+  let { output, inferenceTime, maxValue } = results;
+  // console.log(output)
   return (
     <div className="flex flex-col md:flex-row md:space-x-8 min-h-[60vh] w-screen justify-center items-center">
       <div className="flex flex-col space-y-3">
@@ -163,9 +170,9 @@ export function Canvas() {
                     <p className="text-white font-bold">{index}</p>
                   </div>
                   <div className="flex-1 space-y-4 py-1">
-                    <div className="flex h-5 bg-indigo-400/80 rounded justify-start items-center">
+                    <div className="flex h-5 bg-indigo-300/80 rounded justify-start items-center">
                       <div
-                        className={`${val == maxValue ? "bg-indigo-800" : "bg-indigo-500/80"
+                        className={`${val == maxValue ? "bg-indigo-800" : "bg-indigo-400/80"
                           } rounded h-5 justify-center items-center `}
                         style={{
                           width: width + "%",
